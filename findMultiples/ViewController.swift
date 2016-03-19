@@ -8,8 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController
+{
+    //variables
+    var defaultValue = 0
+    var newValue:Int = 0
+    
+    //outlets
+    @IBOutlet weak var enterValueTextField: UITextField!
+    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBAction func startButtonTouchUpInside (sender: UIButton!)
+    {
+    
+    }
+    
+    @IBAction func addButtonTouchUpInside (sender: UIButton!)
+    {
+       newValue = defaultValue + Int(enterValueTextField.text!)!
+       outputLabel.text = "\(newValue)"
+       updateValue()
+       
+    }
+    
+    func updateValue()
+    {
+        defaultValue = Int(outputLabel.text!)!
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
